@@ -1,0 +1,35 @@
+[build-system]
+requires = ["briefcase"]
+
+[tool.briefcase]
+project_name = "WhatsApp Scheduler"
+bundle = "com.whatsappscheduler"
+version = "0.1.0"
+url = "https://github.com/yourusername/whatsapp-scheduler"
+license.file = "LICENSE"
+author = "Your Name"
+author_email = "your.email@example.com"
+
+[tool.briefcase.app.whatsappscheduler]
+formal_name = "WhatsApp Scheduler"
+description = "A WhatsApp message scheduling application"
+icon = "src/whatsappscheduler/resources/whatsappscheduler"
+sources = ["src/whatsappscheduler"]
+requires = [
+    "kivy==2.0.0",
+    "pywhatkit==5.4",
+    "python-dateutil==2.8.2"
+]
+
+[tool.briefcase.app.whatsappscheduler.android]
+requires = [
+    "kivy_android==2.0.0"
+]
+build_gradle_dependencies = [
+    "androidx.appcompat:appcompat:1.0.2",
+    "androidx.constraintlayout:constraintlayout:1.1.3",
+    "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+]
+private_permission = [
+    "android.permission.INTERNET"
+]
